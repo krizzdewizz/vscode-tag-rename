@@ -17,10 +17,11 @@ class RenameProvider implements vs.RenameProvider {
 
         const edit = new vs.WorkspaceEdit();
         const startPos = found.start + 1;
-        edit.replace(document.uri, new vs.Range(document.positionAt(startPos), document.positionAt(startPos + found.name.length)), newName);
+        edit.replace(document.uri, new vs.Range(document.positionAt(startPos), document.positionAt(startPos + found.length)), newName);
 
         const endPos = found.end + 2;
-        edit.replace(document.uri, new vs.Range(document.positionAt(endPos), document.positionAt(endPos + found.name.length)), newName);
+        edit.replace(document.uri, new vs.Range(document.positionAt(endPos), document.positionAt(endPos + found.length)), newName);
+
         return edit;
     }
 }

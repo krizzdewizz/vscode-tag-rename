@@ -9,7 +9,7 @@ interface StartPositions {
 }
 
 export interface Match {
-    name: string;
+    length: number;
     start: number;
     end: number;
 };
@@ -38,10 +38,10 @@ export function findMatchingEnd(text: string, pos: number): Match {
     parser.on('endTag', (name: string, location: parse.LocationInfo) => {
         depth--;
         if (startFound && startFound.name === name && startFound.depth === depth) {
-            endMatch = { name, start: startFound.position, end: location.startOffset };
+            endMatch = { length: name.length, start: startFound.position, end: location.startOffset };
             parser.stop();
         } else if (inRange(pos, location.startOffset + 1, name.length)) {
-            startMatch = { name, start: starts[toId(name)].startOffset, end: location.startOffset };
+            startMatch = { length: name.length, start: starts[toId(name)].startOffset, end: location.startOffset };
             parser.stop();
         }
     });
