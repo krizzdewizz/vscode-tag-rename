@@ -9,14 +9,21 @@
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "rename",
+    "html",
+    "xml",
+    "vscode",
+    "extension"
+  ],
   "icon": "doc/logo.png",
   "bugs": {
-    "url": "https://github.com/krizzdewizz/vscode-refactorix/issues"
+    "url": "https://github.com/krizzdewizz/vscode-tag-rename/issues"
   },
-  "homepage": "https://github.com/krizzdewizz/vscode-refactorix",
+  "homepage": "https://github.com/krizzdewizz/vscode-tag-rename",
   "repository": {
     "type": "git",
-    "url": "https://github.com/krizzdewizz/vscode-refactorix.git"
+    "url": "https://github.com/krizzdewizz/vscode-tag-rename.git"
   },
   "activationEvents": [
     "onLanguage:html",
