@@ -1,7 +1,7 @@
 # Rename HTML/XML tags
 Rename HTML/XML tags extension for Visual Studio Code.
 
-After installing, open a HTML or XML file, place the cursor on a start or end tag and press `F2` (`Rename Symbol`).
+After installing, open a HTML or XML file, place the cursor on a &lt;start&gt; or &lt;/end&gt; tag and press `F2` (`Rename Symbol`).
 
 ![Command](doc/command.png "Command")
 
