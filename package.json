@@ -1,0 +1,41 @@
+{
+  "name": "tag-rename",
+  "description": "Rename HTML/XML tags",
+  "version": "0.1.0",
+  "publisher": "krizzdewizz",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "doc/logo.png",
+  "bugs": {
+    "url": "https://github.com/krizzdewizz/vscode-refactorix/issues"
+  },
+  "homepage": "https://github.com/krizzdewizz/vscode-refactorix",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krizzdewizz/vscode-refactorix.git"
+  },
+  "activationEvents": [
+    "onLanguage:html",
+    "onLanguage:xml"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {},
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile --watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "dependencies": {
+    "parse5": "*"
+  },
+  "devDependencies": {
+    "tslint": "^3.8.1",
+    "typescript": "^1.8.5",
+    "vscode": "^0.11.0",
+    "jasmine": "*"
+  }
+}
