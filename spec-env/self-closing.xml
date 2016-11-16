@@ -1,0 +1,9 @@
+<section>
+    <div class='foo'>
+        <div class='bar'>
+            <span></span>
+            <input/>
+            <span></span>
+        </div>
+    </div>
+</section>

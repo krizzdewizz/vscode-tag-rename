@@ -9,18 +9,20 @@ import { findMatchingEnd } from './core/rename';
 
 class RenameProvider implements vs.RenameProvider {
     provideRenameEdits(document: vs.TextDocument, position: vs.Position, newName: string, token: vs.CancellationToken): vs.WorkspaceEdit | Thenable<vs.WorkspaceEdit> {
-        const found = findMatchingEnd(document.getText(), document.offsetAt(position));
+        const found = findMatchingEnd(document.getText(), document.offsetAt(position), document.languageId === 'html');
 
         if (!found) {
             return undefined;
         }
 
         const edit = new vs.WorkspaceEdit();
-        const startPos = found.start + 1;
+        const startPos = found.start;
         edit.replace(document.uri, new vs.Range(document.positionAt(startPos), document.positionAt(startPos + found.length)), newName);
 
-        const endPos = found.end + 2;
-        edit.replace(document.uri, new vs.Range(document.positionAt(endPos), document.positionAt(endPos + found.length)), newName);
+        const endPos = found.end;
+        if (typeof endPos === 'number') {
+            edit.replace(document.uri, new vs.Range(document.positionAt(endPos), document.positionAt(endPos + found.length)), newName);
+        }
 
         return edit;
     }

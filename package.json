@@ -1,7 +1,7 @@
 {
   "name": "tag-rename",
   "description": "Rename HTML/XML tags",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "krizzdewizz",
   "engines": {
     "vscode": "^1.0.0"
