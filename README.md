@@ -9,6 +9,9 @@ Note: `Rename Symbol` is available also on attribute names, values...on anything
 
 ## Release Info
 
+v0.1.1
+- Handles self-closing elements and HTML void elements like `input`, `br`, `link` etc.
+
 v0.1.0
 - Initial release
 
