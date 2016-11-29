@@ -1,7 +1,7 @@
 {
   "name": "tag-rename",
   "description": "Rename HTML/XML tags",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "publisher": "krizzdewizz",
   "engines": {
     "vscode": "^1.0.0"
@@ -27,7 +27,8 @@
   },
   "activationEvents": [
     "onLanguage:html",
-    "onLanguage:xml"
+    "onLanguage:xml",
+    "onLanguage:php"
   ],
   "main": "./out/src/extension",
   "contributes": {},

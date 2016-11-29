@@ -7,9 +7,11 @@ import * as fs from 'fs';
 
 import { findMatchingEnd } from './core/rename';
 
+const RENAME_PROVIDERS = ['html', 'xml', 'php'];
+
 class RenameProvider implements vs.RenameProvider {
     provideRenameEdits(document: vs.TextDocument, position: vs.Position, newName: string, token: vs.CancellationToken): vs.WorkspaceEdit | Thenable<vs.WorkspaceEdit> {
-        const found = findMatchingEnd(document.getText(), document.offsetAt(position), document.languageId === 'html');
+        const found = findMatchingEnd(document.getText(), document.offsetAt(position), document.languageId !== 'xml');
 
         if (!found) {
             return undefined;
@@ -29,5 +31,5 @@ class RenameProvider implements vs.RenameProvider {
 }
 
 export function activate(context: vs.ExtensionContext) {
-    vs.languages.registerRenameProvider(['html', 'xml'], new RenameProvider());
+    vs.languages.registerRenameProvider(RENAME_PROVIDERS, new RenameProvider());
 }
