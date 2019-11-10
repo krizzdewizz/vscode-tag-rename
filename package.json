@@ -28,7 +28,9 @@
   "activationEvents": [
     "onLanguage:html",
     "onLanguage:xml",
-    "onLanguage:php"
+    "onLanguage:php",
+    "onLanguage:blade",
+    "onLanguage:vue-html"
   ],
   "main": "./out/src/extension",
   "contributes": {},
